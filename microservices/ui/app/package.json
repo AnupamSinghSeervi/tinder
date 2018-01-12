@@ -4,9 +4,9 @@
   "description": "task-1 of hpdf.",
   "main": "index.js",
   "scripts": {
-    "start": "REACT_APP_CLUSTER_NAME=embroidery86 webpack-dev-server --env.dev",
+    "start": "cross-env REACT_APP_CLUSTER_NAME=embroidery86 webpack-dev-server ",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "REACT_APP_CLUSTER_NAME=embroidery86 webpack"
+    "build": "cross-env REACT_APP_CLUSTER_NAME=embroidery86 webpack"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +29,7 @@
     "material-ui-icons": "^1.0.0-beta.17",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "typeface-roboto": "0.0.45"
+    "typeface-roboto": "0.0.45",
+    "cross-env": "^5.1.3"
   }
 }
