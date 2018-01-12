@@ -10,7 +10,7 @@ RUN npm -g install serve
 
 #Add all source code
 ADD app /app/
-RUN cd /app && npm build
+RUN cd /app && npm run build
 
 WORKDIR /app
 
