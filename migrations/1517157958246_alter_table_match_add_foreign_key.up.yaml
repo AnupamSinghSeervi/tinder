@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "match" ADD FOREIGN KEY ("LikeUser_id") REFERENCES "user" ("hasura_id")
+  type: run_sql
