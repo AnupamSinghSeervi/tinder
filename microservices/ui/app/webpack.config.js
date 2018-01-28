@@ -1,58 +1,31 @@
 const path = require('path');
 
-module.exports = options => {
-  return {
-    entry: './src/index.js',
-    devServer:{
-      contentBase: './public'
-    },
-    output: {
-      filename: 'bundle.js',
-       path: path.resolve(__dirname, 'public')
-    },
-    module: {
-      rules: [
-        {
-          test: /.js$/,
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: 'babel-loader',
-              options: {
-                cacheDirectory: true,
-              },
-            },
-          ],
-        },
-        {
-         test: /\.(png|svg)$/,
-         use: [
-           {
-             loader: 'url-loader',
-             options: {
-               limit: 8192
-             }
-           }
-         ]
-       },
-       {
-          test: /\.(woff|woff2|jpg|gif)$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: '[name].[ext]',
-              }
-            }
-          ]
-        },
-        {
-          test: /\.(png|svg|jpeg|gif)$/,
-           use: [
-             'file-loader'
-           ]
-        },
-      ],
-    },
-  }
-}
+module.exports = {
+  entry: './src/index.js',
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+    compress: true,
+    port: 8080
+  },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public')
+  },
+  module: {
+    rules:
+    [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
+      }
+    ]
+ }
+};

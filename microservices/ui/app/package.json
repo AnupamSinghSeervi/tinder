@@ -1,12 +1,13 @@
 {
-  "name": "task-1",
+  "name": "tinder",
   "version": "1.0.0",
-  "description": "task-1 of hpdf.",
-  "main": "index.js",
+  "description": "Hpdf task: tinder clone app",
+  "main": "webpack.config.js",
   "scripts": {
-    "start": "cross-env REACT_APP_CLUSTER_NAME=embroidery86 webpack-dev-server ",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env REACT_APP_CLUSTER_NAME=embroidery86 webpack"
+    "watch": "webpack --watch",
+    "start": "cross-env REACT_APP_CLUSTER_NAME=embroidery86 webpack-dev-server ",
+     "build": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -16,20 +17,14 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1",
+    "fetch": "^1.1.0",
     "file-loader": "^1.1.6",
-    "styled-components": "^2.2.4",
-    "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
+    "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
-    "material-ui": "^1.0.0-beta.23",
-    "material-ui-icons": "^1.0.0-beta.17",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "typeface-roboto": "0.0.45",
-    "cross-env": "^5.1.3"
+    "styled-components": "^3.0.2"
   }
 }
