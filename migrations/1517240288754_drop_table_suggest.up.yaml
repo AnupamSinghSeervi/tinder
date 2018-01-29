@@ -1,0 +1,3 @@
+- args:
+    sql: DROP TABLE "suggest"
+  type: run_sql
