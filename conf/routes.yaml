@@ -188,7 +188,12 @@ api:
 
 www:
   /:
-    corsPolicy: allow_all
+    corsPolicy: null
+    enableAuth: true
+    enableCORS: true
+    enableWebsockets: true
+    locationDirectives: ""
+    restrictToRoles: []
     upstreamService:
       name: www
       namespace: '{{ cluster.metadata.namespaces.user }}'
