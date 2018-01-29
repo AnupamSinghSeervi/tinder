@@ -188,27 +188,6 @@ api:
 
 
 
-app:
-  /:
-    corsPolicy: allow_all
-    upstreamService:
-      name: app
-      namespace: '{{ cluster.metadata.namespaces.user }}'
-    upstreamServicePath: /
-    upstreamServicePort: 80
-
-
-
-adminer:
-  /:
-    corsPolicy: allow_all
-    upstreamService:
-      name: adminer
-      namespace: '{{ cluster.metadata.namespaces.user }}'
-    upstreamServicePath: /
-    upstreamServicePort: 80
-
-
 
 www:
   /:
