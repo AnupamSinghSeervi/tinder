@@ -185,16 +185,14 @@ api:
       namespace: '{{ cluster.metadata.namespaces.user }}'
     upstreamServicePath: /
     upstreamServicePort: 80
+
 www:
   /:
-    corsPolicy: null
-    enableAuth: true
-    enableCORS: true
-    enableWebsockets: true
-    locationDirectives: ""
-    restrictToRoles: []
+    corsPolicy: allow_all
     upstreamService:
       name: www
       namespace: '{{ cluster.metadata.namespaces.user }}'
     upstreamServicePath: /
     upstreamServicePort: 80
+
+
