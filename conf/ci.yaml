@@ -26,9 +26,8 @@ remotes:
       api:
         dockerfile: microservices/api/Dockerfile
         path: microservices/api
-
-    '{{ cluster.metadata.namespaces.user }}.www':
-      www:
-        dockerfile: microservices/www/Dockerfile
-        path: microservices/www
+    '{{ cluster.metadata.namespaces.user }}.app':
+      app:
+        dockerfile: microservices/app/Dockerfile
+        path: microservices/app
 

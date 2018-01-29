@@ -186,16 +186,13 @@ api:
     upstreamServicePath: /
     upstreamServicePort: 80
 
-www:
+
+
+app:
   /:
-    corsPolicy: null
-    enableAuth: true
-    enableCORS: true
-    enableWebsockets: true
-    locationDirectives: ""
-    restrictToRoles: []
+    corsPolicy: allow_all
     upstreamService:
-      name: www
+      name: app
       namespace: '{{ cluster.metadata.namespaces.user }}'
     upstreamServicePath: /
     upstreamServicePort: 80
