@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
+    contentBase: './public',
     compress: true,
     port: 8080
   },
