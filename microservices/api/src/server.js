@@ -23,7 +23,7 @@ app.use('/', hasuraExamplesRouter);
 var clientIp = require('client-ip');
 app.get("/ip",function(req,res){
  let i = clientIp(req);
- res.send(i);
+ res.send(i+",   "+JSON.stringify(req.headers));
 })
 
 
