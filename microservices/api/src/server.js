@@ -20,12 +20,24 @@ app.use(bodyParser.urlencoded({
 
 app.use('/', hasuraExamplesRouter);
 
-app.get("/ip",function(req,res){
-  res.send(req.ip);
+app.get("/ip", function(req,res){
+//  var ip = req.clientIp;
+
+var ip = (
+     req.headers['x-forwarded-for'] ||
+     req.connection.remoteAddress ||
+     req.socket.remoteAddress ||
+     req.connection.socket.remoteAddress||
+     req.info.remoteAddress||
+     req.headers['X-Cluster-Client-IP']||
+     req.headers['CF-Connecting-IP']||
+     req.headers['True-Client-Ip']||
+     req.headers['X-Real-IP']);
+  res.end(ip + '\n');
 })
+
 app.get("ip6",function(req,res){
-  var ip = req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  res.send(ip+"");
+  res.send(req.ip.split(",")[0]);
 })
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
