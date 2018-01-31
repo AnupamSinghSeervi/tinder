@@ -1,0 +1,3 @@
+- args:
+    sql: "SELECT match.hasura_id \n    from match;"
+  type: run_sql

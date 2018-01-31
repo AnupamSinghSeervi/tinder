@@ -26,10 +26,3 @@ remotes:
       api:
         dockerfile: microservices/api/Dockerfile
         path: microservices/api
-
-
-    '{{ cluster.metadata.namespaces.user }}.adminer':
-      adminer:
-        dockerfile: microservices/adminer/Dockerfile
-        path: microservices/adminer
-

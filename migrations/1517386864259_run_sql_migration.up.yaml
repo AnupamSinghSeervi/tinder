@@ -1,0 +1,3 @@
+- args:
+    sql: "SELECT match.hasura_id \n    from match where hasura_id = 80;"
+  type: run_sql

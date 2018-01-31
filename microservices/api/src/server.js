@@ -17,8 +17,16 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+
 app.use('/', hasuraExamplesRouter);
 
+app.get("/ip",function(req,res){
+  res.send(req.ip);
+})
+app.get("ip6",function(req,res){
+  var ip = req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  res.send(ip+"");
+})
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
 });

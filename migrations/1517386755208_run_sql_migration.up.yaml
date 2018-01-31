@@ -1,0 +1,3 @@
+- args:
+    sql: SELECT * from match;
+  type: run_sql
