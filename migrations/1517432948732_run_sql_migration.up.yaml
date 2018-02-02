@@ -1,0 +1,5 @@
+- args:
+    sql: "select \n   match.like_user_id, \"user-info\".name , \"user-info\".profile_file_id\n
+      \  from match,\"user-info\"\n   where match.like_user_id = \"user-info\".hasura_id
+      \n     AND match.hasura_id = 92;"
+  type: run_sql
